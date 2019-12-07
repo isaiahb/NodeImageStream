@@ -4,7 +4,8 @@
   "description": "recieve streaming images with node using socket.io and python client",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+	"test": "node index.js",
+	"start": "npm run index.js"
   },
   "repository": {
     "type": "git",
