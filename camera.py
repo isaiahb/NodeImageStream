@@ -21,7 +21,8 @@ print(id)
 sio = socketio.Client()
 # port = os.getenv("PORT") if os.getenv("PORT") else ""
 port = os.getenv("PORT") or 3000
-sio.connect('http://localhost:' + str(port))
+# sio.connect('http://localhost:' + str(port))
+sio.connect("http://image-stream.herokuapp.com/")
 
 
 def emit(data):
@@ -45,7 +46,7 @@ while(True):
     image = cv2.imencode(".jpg", frame)[1]  # .tostring()
     jpg_as_text = base64.b64encode(image)
     emit(jpg_as_text)
-    # time.sleep()
+    # time.sleep(1/20)
     # listen for terminal input then stop streaming
     i, o, e = select.select([sys.stdin], [], [], 0.0001)
     if i == [sys.stdin]:

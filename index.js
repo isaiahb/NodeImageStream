@@ -15,9 +15,12 @@ io.on('connection', function (socket) {
 		console.log("DISCONNECTED:  " + id)
 	});
 
+	let i = 0;
 	socket.on("stream", function (data){
 		let string = data.toString();
-		io.emit('image', string);
+		i++;
+		if (i%3 == 0)
+			io.emit('image', string);
 	});
 });
 
