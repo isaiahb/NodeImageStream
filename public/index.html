@@ -1,0 +1,25 @@
+<html>
+
+<body>
+	<img id="image">
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		const image = document.getElementById("image");
+		var socket = io("/");
+		async function setImage(data) {
+			image.src = "data:image/jpeg; base64, " + data;
+		}
+
+		let last = Date.now();
+		socket.on('image', (data)=>{
+			const millis = Date.now() - last;
+			const secs = (millis/1000)
+			console.log("fps: " + Math.floor(1/secs));
+			
+			image.src = `data:image/jpeg;base64, ${data}`
+			last = Date.now();
+		});
+	</script>
+</body>
+
+</html>

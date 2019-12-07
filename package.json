@@ -1,0 +1,33 @@
+{
+  "name": "nodeimagestream",
+  "version": "1.0.0",
+  "description": "recieve streaming images with node using socket.io and python client",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaiahb/NodeImageStream.git"
+  },
+  "keywords": [
+    "isaiah",
+    "ballah",
+    "node",
+    "socket.io",
+    "image",
+    "stream",
+    "video"
+  ],
+  "author": "Isaiah Ballah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaiahb/NodeImageStream/issues"
+  },
+  "homepage": "https://github.com/isaiahb/NodeImageStream#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "object-sizeof": "^1.5.2",
+    "socket.io": "^2.3.0"
+  }
+}
